@@ -1,0 +1,498 @@
+/* Base styles */
+html, body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .w3-white {
+  background-color: #2d2d2d !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .w3-light-grey {
+  background-color: #333333 !important;
+}
+
+.dark-mode .w3-text-grey {
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Notification styles */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  animation: slideIn 0.5s ease-out;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Profile image styles */
+.profile-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.02);
+}
+
+/* Skill bar styles */
+.skill-bar {
+  transition: width 1s ease-in-out;
+  width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Add padding to the skills section */
+section:has(h3:has(i.fa-asterisk)) {
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Add spacing between skill items */
+.w3-container p {
+  margin: 15px 0;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Add margin after the last skill bar */
+.w3-light-grey.w3-round-xlarge.w3-small:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.w3-container p::after {
+  content: attr(data-level);
+  font-size: 0.9em;
+  color: #009688;
+  font-weight: bold;
+}
+
+/* Skill category headers */
+.skill-category {
+  font-size: 1.1em;
+  color: #009688;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #009688;
+}
+
+/* Hover effects for skill bars */
+.w3-light-grey.w3-round-xlarge.w3-small {
+  transition: transform 0.3s ease;
+}
+
+.w3-light-grey.w3-round-xlarge.w3-small:hover {
+  transform: scale(1.02);
+}
+
+/* Dark mode adjustments for skills */
+.dark-mode .w3-container p::after {
+  color: #4db6ac;
+}
+
+.dark-mode .skill-category {
+  color: #4db6ac;
+  border-bottom-color: #4db6ac;
+}
+
+/* Responsive adjustments for skills section */
+@media screen and (max-width: 768px) {
+  .w3-container p {
+    font-size: 0.9em;
+  }
+  
+  .w3-container p::after {
+    font-size: 0.8em;
+  }
+}
+
+/* Social media icon styles */
+.social-icon {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-icon:hover {
+  opacity: 0.7;
+  transform: scale(1.2);
+}
+
+/* Social links container */
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  margin: 0 0.5rem;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* Interactive elements */
+.w3-container p {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.w3-container p:hover {
+  transform: translateX(10px);
+}
+
+.w3-container p i {
+  transition: transform 0.5s ease;
+}
+
+/* Card hover effects */
+.w3-card-4 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.w3-card-4:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Additional utility classes */
+.w3-light-grey {
+  background-color: #f1f1f1;
+}
+
+.w3-teal {
+  color: #fff !important;
+  background-color: #009688 !important;
+}
+
+.w3-text-teal {
+  color: #009688 !important;
+}
+
+.w3-white {
+  color: #000 !important;
+  background-color: #fff !important;
+}
+
+.w3-card-4 {
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.w3-round-xlarge {
+  border-radius: 16px;
+}
+
+.w3-round {
+  border-radius: 4px;
+}
+
+.w3-tag {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+/* Layout styles */
+.w3-content {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.w3-margin-top {
+  margin-top: 16px !important;
+}
+
+.w3-margin-bottom {
+  margin-bottom: 16px !important;
+}
+
+.w3-padding-16 {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+.w3-container {
+  padding: 0.01em 16px;
+}
+
+.w3-row-padding {
+  padding: 0 8px;
+}
+
+.w3-third {
+  width: 33.33333%;
+}
+
+.w3-twothird {
+  width: 66.66666%;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+  .w3-third, .w3-twothird {
+    width: 100%;
+  }
+  
+  .dark-mode-toggle {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* List styles for achievements and experience */
+.w3-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.w3-ul li {
+  padding: 8px 16px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  padding-left: 30px;
+}
+
+.w3-ul li:before {
+  content: "•";
+  color: #009688;
+  font-weight: bold;
+  position: absolute;
+  left: 10px;
+}
+
+.w3-ul li:last-child {
+  border-bottom: none;
+}
+
+/* Section icons animation */
+.w3-xxlarge {
+  transition: transform 0.3s ease;
+}
+
+.w3-card-4:hover .w3-xxlarge {
+  transform: scale(1.1);
+}
+
+/* Project cards specific styles */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #009688;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Achievement list hover effect */
+.w3-ul li {
+  transition: transform 0.3s ease, padding-left 0.3s ease;
+}
+
+.w3-ul li:hover {
+  transform: translateX(10px);
+  padding-left: 35px;
+}
+
+/* Certification badge style */
+.certification-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #009688;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+/* Professional summary highlight */
+.professional-summary {
+  position: relative;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.professional-summary::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  font-size: 60px;
+  color: #009688;
+  opacity: 0.2;
+}
+
+/* Dark mode adjustments for new sections */
+.dark-mode .w3-ul li {
+  border-bottom-color: #444;
+}
+
+.dark-mode .professional-summary {
+  background-color: #2d2d2d;
+}
+
+.dark-mode .certification-badge {
+  background-color: #00695c;
+}
+
+/* Add padding to the Languages section */
+section:has(h3:has(i.fa-globe)) {
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Add spacing between language items */
+.w3-container p {
+  margin: 15px 0;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Add margin after the last language bar */
+.w3-round-xlarge.w3-teal:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+/* Add extra spacing after the language section */
+.w3-container:has(h3:has(i.fa-globe)) {
+  margin-bottom: 2rem;
+}
+
+/* Project details styles */
+.w3-container ul.w3-ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.w3-container ul.w3-ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.w3-container ul.w3-ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #009688;
+  font-weight: bold;
+}
+
+.w3-container ul.w3-ul li:hover {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+.w3-container p strong {
+  color: #009688;
+  font-weight: 600;
+}
+
+/* Project card hover effect */
+.w3-container.w3-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.w3-container.w3-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Dark mode adjustments for project details */
+.dark-mode .w3-container ul.w3-ul li::before {
+  color: #4db6ac;
+}
+
+.dark-mode .w3-container p strong {
+  color: #4db6ac;
+} 
